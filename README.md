@@ -1,10 +1,10 @@
-CookieShop (geppalmundial.com.mx)
+CookieShop (Shop Simple)
 =======================
 
 Introducción
 ------------
-Se trata de una aplicación sencilla, esqueleto con la capa MVC ZF2 y el módulo
-sistemas. Esta aplicación le permite gestionar tiendas en línea.
+Se trata de una aplicación sencilla, esqueleto con la capa MVC ZF2. 
+Esta aplicación le permite gestionar tiendas en línea.
 
 
 Instalación.
