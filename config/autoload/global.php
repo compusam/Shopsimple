@@ -39,7 +39,7 @@ return array(
     ),
     'db' => array(
                 'driver' => 'Pdo',
-                'dsn' => 'mysql:dbname=geppalmu_garrafon;hostname=localhost',
+                'dsn' => 'mysql:dbname=cscore;hostname=localhost',
                 'username' => 'root',
                 'password' => '',
                 'driver_options' => array(
