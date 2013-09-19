@@ -1,0 +1,17 @@
+<div class="row">
+    <?php foreach ($this->categories as $category):?>
+    <div class="span4">
+        <h2><?php echo $category['name']; ?></h2>
+        <p>
+            <a href="<?php echo $this->basePath('productsc/'.
+                    $category['id']); ?>">
+                <img src="<?php echo $this->basePath('img/categorias/'.
+                        $category['thumb_img']); ?>" 
+                     border="0" alt="<?php echo $category['name']; ?>" 
+                     title="<?php echo $category['name']; ?>"/>
+            </a>            
+        </p>
+        
+    </div>
+    <?php endforeach;?>
+</div>

@@ -1,0 +1,27 @@
+<?php $isRowNew = 0;?>
+<div class="hero-unit">
+<div class="row">
+    <?php if(!is_null($this->sample)) : ?>
+    <?php foreach($this->sample as $row) : ?>
+    <?php if ($isRowNew===0): ?><tr><?php $isRowNew = 1; endif; ?>
+    <div class="span4">
+        <h2><?php echo $row['other_sku']; ?></h2>
+        <p>
+            <a href="<?php echo $this->basePath('articulo/'.$row['id']); ?>" 
+               title="<?php echo $row['other_sku']; ?>">
+            <img src="<?php echo $this->basePath('img/product/'.
+                    $row['thumb_image']); ?>" 
+                    border="0" 
+                    title="<?php echo $row['other_sku']; ?>" 
+                    alt="<?php echo $row['other_sku']; ?>" /></a>           
+        </p>
+         <p><?php echo $row['price']; ?><?php echo ' '.$row['currency']; ?></p>
+    </div>
+    <?php if ($isRowNew===2): ?></tr><?php $isRowNew = -1; endif; ?> 
+    <?php ++$isRowNew;?>    
+    <?php endforeach; ?>
+    <?php endif; ?>
+</div></div>
+<?php echo ( count($this->sample) > 0 ) ? $this->paginationControl($this->sample, 'Sliding', 'csproductcmf/index/pager.phtml') : ""; ?>
+
+
