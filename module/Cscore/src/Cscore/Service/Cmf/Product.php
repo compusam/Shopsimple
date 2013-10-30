@@ -34,7 +34,7 @@ class Product implements ServiceManagerAwareInterface{
         $allProducts = $ProductTable->fetchAllPages($cat)->toArray();
         $i=0;
         foreach ($allProducts as $item){
-            $ProductPrice = $this->getPriceByProductId($item['id']);
+            $ProductPrice = $this->getPriceByProductId($item['product_id']);
             $allProducts[$i]['price'] = $ProductPrice['price'];
             $allProducts[$i]['currency'] = $ProductPrice['currency'];
             ++$i;
