@@ -1,0 +1,40 @@
+<?php
+$form = $this->form;
+?>
+<section class="container">
+<h2 class="page-header">Tienda Soriana</h2>
+<h3>Aquí puedes registrar tus tickets.</h3>
+<div class="jumbotron">
+
+<?php echo $this->form()->openTag($form) . PHP_EOL;?>
+<?php echo $this->formLabel($form->get('soriana_ticket')). PHP_EOL;?>
+<?php echo $this->formInput($form->get('soriana_ticket')). PHP_EOL;?>
+<?php echo $this->formHidden($form->get('csrf')) ?>
+    <div id="error_message"></div>
+<?php echo $this->formInput($form->get('submit')). PHP_EOL;?>
+<p></p> 
+<?php echo $this->form()->closeTag($form) . PHP_EOL;?>
+
+
+<br>
+<br>
+<br>
+
+
+</div>
+
+
+<br>
+
+<div class="jumbotron">
+<center>
+<p>Síguenos en nuestras redes sociales.</p>
+<a href=""><img src="assets/img/fbk.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=""><img src="assets/img/twi.png"></a><br>
+
+<a href="">Instrucciones para la APP</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+<a href="">Términos y condiciones</a>
+</center>
+</div>
+</section> <!-- /container -->
+<script src="<?php echo $this->basePath('js/ticket_soriana.js') ?>"></script>

@@ -1,0 +1,55 @@
+<?php
+$form = $this->form;
+?>
+<section class="container">
+    <h2 class="page-header">Registro de Tickets</h2>
+    <h3>Aquí puedes registrar tus tickets.</h3>
+    <div class="jumbotron">
+
+        <?php echo $this->form()->openTag($form) . PHP_EOL; ?>
+        <?php echo $this->formLabel($form->get('autoservicio')) . PHP_EOL; ?>
+        <?php echo $this->formSelect($form->get('autoservicio')) . PHP_EOL; ?>
+        <?php echo $this->formHidden($form->get('csrf')) ?>
+        <?php echo $this->formInput($form->get('submit')) . PHP_EOL; ?>
+        <p></p> 
+        <?php echo $this->form()->closeTag($form) . PHP_EOL; ?>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Ticket</th> 
+                    <th>TR</th>
+                    <th>Tienda</th> 
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($this->items as $item): ?>
+                    <tr>
+                        <td><?php echo date('d/m/Y', $item['fecha']) ?></td>
+                        <td><?php echo $item['ticket'] ?></td>
+                        <td><?php echo $item['tr'] ?></td>
+                        <td><?php echo $item['tienda'] ?></td>
+                        <td><?php echo $item['estado'] ?></td>
+                    </tr>
+                <?php endforeach; ?>      
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <br>
+
+    <div class="jumbotron">
+        <center>
+            <p>Síguenos en nuestras redes sociales.</p>
+            <a href=""><img src="assets/img/fbk.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href=""><img src="assets/img/twi.png"></a><br>
+
+            <a href="">Instrucciones para la APP</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+            <a href="">Términos y condiciones</a>
+        </center>
+    </div>
+</section> <!-- /container -->
