@@ -109,25 +109,27 @@ class CartTable extends AbstractTableGateway{
      */
     public function getEntitiesJoin($resultSet){
         $entities = array();
-        foreach ($resultSet as $row){
-            $map= array(
-                'user_id' => $row->user_id,
-                'product_id' => $row->product_id,
-                'quantity' => $row->quantity,
-                'price' => $row->price,
-                'fees' => $row->fees,
-                'line_total' => $row->line_total,
-                'id' => $row->id,
-                'sku' => $row->sku,
-                'other_sku' => $row->other_sku,
-                'description' => $row->description,
-                'thumb_image' => $this->_getNameImages($row->thumb_image),
-                'full_image' => $row->full_image,
-                'last_update' => $row->last_update,
-                'product_status' => $row->product_status
-            ); 
-            $entities[] = $map;  
+        if(count($resultSet)>0){
+            foreach ($resultSet as $row){
+                $map= array(
+                    'user_id' => $row->user_id,
+                    'product_id' => $row->product_id,
+                    'quantity' => $row->quantity,
+                    'price' => $row->price,
+                    'fees' => $row->fees,
+                    'line_total' => $row->line_total,
+                    'id' => $row->id,
+                    'sku' => $row->sku,
+                    'other_sku' => $row->other_sku,
+                    'description' => $row->description,
+                    'thumb_image' => $this->_getNameImages($row->thumb_image),
+                    'full_image' => $row->full_image,
+                    'last_update' => $row->last_update,
+                    'product_status' => $row->product_status
+                ); 
+                $entities[] = $map;  
 
+            }
         }
         return $entities;
     }
