@@ -37,6 +37,7 @@ class Permission extends AbstractPlugin{
             case 'permisiondeny/deny': break;
             case 'zfcuser/login': break;
             case 'zfcuser/logout': break;
+            case 'zfcuser/register': break;
             
             default:  
                 $isa = false;
